@@ -3,13 +3,6 @@
 A visual, cross-platform desktop application for finding local alignment
 marks and preparing exposure-job files for electron-beam lithography.
 
-Status: beta, version 0.3.0. The same Python/PyQt6 codebase targets macOS and
-Windows. The application prepares jobs; it does not control an EBL system.
-
-![Application interface with synthetic data](docs/images/demo.png)
-
-## Quick walkthrough
-
 ![Animated synthetic workflow walkthrough](docs/media/lithography-exposure-planner-demo.gif)
 
 [Watch the MP4 version](docs/media/lithography-exposure-planner-demo.mp4).
