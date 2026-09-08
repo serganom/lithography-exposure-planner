@@ -13,8 +13,8 @@ Windows. The application prepares jobs; it does not control an EBL system.
 ![Animated synthetic workflow walkthrough](docs/media/lithography-exposure-planner-demo.gif)
 
 [Watch the MP4 version](docs/media/lithography-exposure-planner-demo.mp4).
-The slower 35-second walkthrough uses synthetic data only and includes short
-English captions. It explicitly shows how an operator can replace the local
+The slower 35-second walkthrough and includes short English captions. 
+It explicitly shows how an operator can replace the local
 mark assigned to a field before reordering and saving the job.
 See the [walkthrough script and accessibility text](docs/DEMO_WALKTHROUGH.md).
 
@@ -183,18 +183,5 @@ Build on the target operating system; PyInstaller is not a cross-compiler.
 Convenience scripts are `scripts/build_macos.sh` and
 `scripts/build_windows.bat`.
 
-The local suite currently contains 54 tests using synthetic data, including a
-240-field/40-mark reorder test and both GDS/CON load orders. This is a
-functional check, not a performance benchmark. See the
-[verification report](docs/VERIFICATION.md).
 
-## Publication
 
-- [GitHub description, requirements, and release notes](docs/GITHUB_PUBLICATION.md)
-- [LinkedIn post](docs/LINKEDIN_POST_EN.md)
-- [Publication checklist](docs/PUBLICATION_CHECKLIST.md)
-
-No project license has been selected on behalf of the rights holder. Confirm
-the right to disclose the source code and choose terms compatible with all
-dependencies before publication. PyQt is available under GPL v3 or a
-commercial license; see [Riverbank](https://www.riverbankcomputing.com/software/pyqt/).
