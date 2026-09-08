@@ -31,30 +31,6 @@ production layout, process recipe, internal path, or real exposure job.
 | 28–32 s | Review and save | Review the result, save the CON atomically, and create a backup. |
 | 32–35 s | Operator check | Verify alignment, units, and process settings before exposure. |
 
-## Suggested GitHub caption
-
-> A paced 35-second synthetic walkthrough of the complete preparation flow:
-> load GDS/CON, detect local R23 marks, review the catalog, assign and manually
-> replace a field's mark, organize field order, inspect with Zoom Area and Pan,
-> and save the reviewed CON.
-
-## Suggested LinkedIn attachment text
-
-> Short synthetic demonstration of Lithography Exposure Planner 0.3.0 beta.
-> The video shows local-mark detection, explicit field assignment and
-> replacement, exposure-sequence organization, layout navigation, and safe CON
-> saving. Important editing stages are deliberately shown at a slower pace.
-
-## Accessibility alt text
-
-> Animated desktop interface showing a synthetic electron-beam lithography
-> job. The application loads GDS and CON data, detects nine cross-shaped R23
-> marks, assigns them to nine exposure fields, changes FIELD_01 from R23_1 to
-> R23_2, changes field order while retaining assignments, zooms and pans around
-> the layout, and saves a reviewed CON file. A final message states that
-> operator verification is required before exposure.
-
-## Regenerate the media
 
 ```sh
 python scripts/capture_walkthrough.py
