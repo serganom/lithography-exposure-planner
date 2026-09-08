@@ -1,0 +1,59 @@
+name: Build desktop packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      distribution_rights_confirmed:
+        description: "I have checked source/binary distribution rights and dependency licenses"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    if: ${{ inputs.distribution_rights_confirmed }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-2022
+            architecture: x64
+            tag: windows-x64
+          - os: macos-15
+            architecture: arm64
+            tag: macos-arm64
+          - os: macos-15-intel
+            architecture: x64
+            tag: macos-x64
+    runs-on: ${{ matrix.os }}
+    env:
+      QT_QPA_PLATFORM: offscreen
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          architecture: ${{ matrix.architecture }}
+          cache: pip
+          cache-dependency-path: |
+            requirements*.txt
+            constraints-build.txt
+      - name: Install build environment
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt -r requirements-dev.txt -c constraints-build.txt
+      - name: Test, build and verify native bundle
+        run: python scripts/build_app.py
+      - name: Upload complete native package
+        uses: actions/upload-artifact@v7
+        with:
+          name: lithography-exposure-planner-${{ matrix.tag }}
+          path: dist/*/*-${{ matrix.tag }}.zip
+          if-no-files-found: error
+          retention-days: 14

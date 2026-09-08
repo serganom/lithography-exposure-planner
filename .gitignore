@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments
+.venv/
+venv/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.spec
+
+# IDE and OS files
+.DS_Store
+.idea/
+.vscode/
+
+# Runtime logs and backups
+*.log
+*.orig
+*.CON.bak
+*.con.bak
+
+# Local lithography data (do not publish)
+*.gds
+*.GDS
+*.con
+*.CON
+*.cbc
+*.CBC
+*.ccc
+*.CCC
+!examples/*.CON
+!examples/*.con
+
+# Legacy diagnostics tied to non-public local datasets
+scripts/analyze_cbc.py
+scripts/analyze_cbc2.py
+scripts/analyze_cbc3.py
+scripts/analyze_cbc4.py
+tests/test_all_versions.py
+tests/test_gds_marks.py
+tests/test_imports.py
+tests/test_roundtrip.py
+tests/test_workflow_fast.py

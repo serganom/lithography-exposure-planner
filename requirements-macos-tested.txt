@@ -1,0 +1,7 @@
+# Runtime versions verified on macOS 13.7.8 / arm64 / Python 3.12.7.
+# Use as constraints with requirements.txt; this is not a universal OS lockfile.
+PyQt6==6.11.0
+PyQt6-Qt6==6.11.2
+PyQt6-sip==13.12.0
+gdspy==1.6.13
+numpy==2.5.2
